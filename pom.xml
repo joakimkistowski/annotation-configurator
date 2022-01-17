@@ -10,8 +10,8 @@
 	<url>https://github.com/joakimkistowski/annotation-configurator</url>
 
 	<scm>
-		<connection>scm:git:https://github.com/joakimkistowsi/annotation-configurator</connection>
-		<developerConnection>scm:git:https://github.com/joakimkistowsi/annotation-configurator</developerConnection>
+		<connection>scm:git:https://github.com/joakimkistowski/annotation-configurator</connection>
+		<developerConnection>scm:git:https://github.com/joakimkistowski/annotation-configurator</developerConnection>
 		<url>${project.url}</url>
 		<tag>HEAD</tag>
 	</scm>
