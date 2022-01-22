@@ -6,7 +6,7 @@
     <groupId>io.github.joakimkistowski</groupId>
     <artifactId>annotation-configurator</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Simple tiny library for configuration injection using annotations.</description>
@@ -45,16 +45,6 @@
     </properties>
 
     <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages: annotation-configurator</name>
-            <url>https://maven.pkg.github.com/joakimkistowski/annotation-configurator</url>
-        </repository>
-    </distributionManagement>
-
-    <!-- preparing maven central migration -->
-    <!--
-    <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
@@ -64,7 +54,6 @@
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-    -->
 
     <dependencies>
         <dependency>

@@ -4,6 +4,15 @@ Simple tiny library for configuration injection using annotations.
 
 ## How to use
 
+Get the library from maven central.
+```xml
+<dependency>
+    <groupId>io.github.joakimkistowski</groupId>
+    <artifactId>annotation-configurator</artifactId>
+    <version>${LATEST_VERSION}</version>
+</dependency>
+```
+
 1. Annotate your class attributes with the `@Config`-annotation.
 
 ```java

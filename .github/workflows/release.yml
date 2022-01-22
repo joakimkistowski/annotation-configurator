@@ -32,8 +32,6 @@ jobs:
         SIGNING_KEY_NAME: ${{ secrets.SIGNING_KEY_NAME }}
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-      # TODO: switch once accepted to maven central
-      run: mvn -B -P sign clean package
-      # run: mvn -B -P sign clean release:prepare release:perform
+      run: mvn -B -P sign clean release:prepare release:perform
 
 
