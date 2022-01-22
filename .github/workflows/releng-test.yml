@@ -15,8 +15,6 @@ jobs:
         java-version: 11
     - id: install-secret-key
       name: Install gpg secret key
-      run: |
-        cat <(echo -e "${{ secrets.SIGNING_KEY }}") | gpg --batch --import
-        gpg --list-secret-keys --keyid-format LONG
+      run: cat <(echo -e "${{ secrets.SIGNING_KEY }}") | gpg --batch --import
     - name: Build, Test and Sign
       run: mvn -B -Dgpg.passphrase=${{ secrets.SIGNING_PASSPHRASE }} -Dgpg.keyname=${{ secrets.SIGNING_KEY_NAME }} clean package -P sign
