@@ -19,4 +19,4 @@ jobs:
         cat <(echo -e "${{ secrets.SIGNING_KEY }}") | gpg --batch --import
         gpg --list-secret-keys --keyid-format LONG
     - name: Build, Test and Sign
-      run: mvn -B -Dgpg.passphrase=${{ secrets.SIGNING_PASSPHRASE }} -P sign clean package
+      run: mvn -B -Dgpg.passphrase=${{ secrets.SIGNING_PASSPHRASE }} -Dgpg.keyname=${{ secrets.SIGNING_KEY_NAME }} -P sign clean package
