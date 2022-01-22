@@ -30,4 +30,4 @@ jobs:
       run: |
         export SIGNING_PASSPHRASE=${{ secrets.SIGNING_PASSPHRASE }}
         export SIGNING_KEY_NAME=${{ secrets.SIGNING_KEY_NAME }}
-        mvn -B -P sign clean release:prepare release:perform -X
+        mvn -B -P sign clean release:prepare release:perform
