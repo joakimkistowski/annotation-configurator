@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - releng_release
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -26,4 +27,4 @@ jobs:
     - name: Maven Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn -B -Dgpg.passphrase=${{ secrets.SIGNING_PASSPHRASE }} -Dgpg.keyname=${{ secrets.SIGNING_KEY_NAME }} release:prepare release:perform -P sign
+      run: mvn -B -Dgpg.passphrase=${{ secrets.SIGNING_PASSPHRASE }} -Dgpg.keyname=${{ secrets.SIGNING_KEY_NAME }} -P sign clean release:prepare release:perform
