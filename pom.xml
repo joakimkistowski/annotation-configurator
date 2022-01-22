@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
     
@@ -5,22 +6,37 @@
 	<artifactId>annotation-configurator</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.2-SNAPSHOT</version>
-	<name>annotation-configurator</name>
-	<url>https://github.com/joakimkistowski/annotation-configurator</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>https://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Joakim von Kistowski</name>
+			<email>joakim.vonkistowski@outlook.com</email>
+			<organization>None</organization>
+			<organizationUrl>https://github.com/joakimkistowski</organizationUrl>
+		</developer>
+	</developers>
 
 	<scm>
-		<connection>scm:git:https://github.com/joakimkistowski/annotation-configurator</connection>
-		<developerConnection>scm:git:https://github.com/joakimkistowski/annotation-configurator</developerConnection>
-		<url>${project.url}</url>
+		<connection>scm:git:git://github.com/joakimkistowski/annotation-configurator.git</connection>
+		<developerConnection>scm:git:ssh://github.com:joakimkistowski/annotation-configurator.git</developerConnection>
+		<url>https://github.com/joakimkistowski/annotation-configurator/tree/main</url>
 		<tag>HEAD</tag>
 	</scm>
+
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<lombok.version>1.18.22</lombok.version>
-		<slf4j.version>1.7.32</slf4j.version>
+		<slf4j.version>1.7.33</slf4j.version>
 	</properties>
 
 	<distributionManagement>
@@ -137,4 +153,27 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>sign</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>package</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
