@@ -13,7 +13,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-        server-id: github
+        server-id: ossrh
+        server-username: MAVEN_USERNAME
+        server-password: MAVEN_PASSWORD
     - name: Configure Git
       run: |
         git config --global committer.email "noreply@github.com"
@@ -26,7 +28,12 @@ jobs:
     - name: Maven Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        export SIGNING_PASSPHRASE=${{ secrets.SIGNING_PASSPHRASE }}
-        export SIGNING_KEY_NAME=${{ secrets.SIGNING_KEY_NAME }}
-        mvn -B -P sign clean release:prepare release:perform
+        SIGNING_PASSPHRASE: ${{ secrets.SIGNING_PASSPHRASE }}
+        SIGNING_KEY_NAME: ${{ secrets.SIGNING_KEY_NAME }}
+        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+      # TODO: switch once accepted to maven central
+      run: mvn -B -P sign clean package
+      # run: mvn -B -P sign clean release:prepare release:perform
+
+
