@@ -20,7 +20,10 @@ jobs:
         git config --global committer.name "GitHub Release Workflow"
         git config --global author.email "${GITHUB_ACTOR}@users.noreply.github.com"
         git config --global author.name "${GITHUB_ACTOR}"
+    - id: install-secret-key
+      name: Install gpg secret key
+      run: cat <(echo -e "${{ secrets.SIGNING_KEY }}") | gpg --batch --import
     - name: Maven Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn -B release:prepare release:perform
+      run: mvn -B -Dgpg.passphrase=${{ secrets.SIGNING_PASSPHRASE }} -Dgpg.keyname=${{ secrets.SIGNING_KEY_NAME }} release:prepare release:perform -P sign
