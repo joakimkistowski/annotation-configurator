@@ -5,7 +5,7 @@
 	<groupId>com.github.joakimkistowski</groupId>
 	<artifactId>annotation-configurator</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 
 	<licenses>
 		<license>
@@ -24,8 +24,8 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/joakimkistowski/annotation-configurator.git</connection>
-		<developerConnection>scm:git:ssh://github.com:joakimkistowski/annotation-configurator.git</developerConnection>
+		<connection>scm:git:https://github.com/joakimkistowski/annotation-configurator.git</connection>
+		<developerConnection>scm:git:https://github.com/joakimkistowski/annotation-configurator.git</developerConnection>
 		<url>https://github.com/joakimkistowski/annotation-configurator/tree/main</url>
 		<tag>HEAD</tag>
 	</scm>
@@ -156,6 +156,12 @@
 	<profiles>
 		<profile>
 			<id>sign</id>
+			<properties>
+				<!--suppress UnresolvedMavenProperty -->
+				<gpg.passphrase>${env.SIGNING_PASSPHRASE}</gpg.passphrase>
+				<!--suppress UnresolvedMavenProperty -->
+				<gpg.keyname>${env.SIGNING_KEY_NAME}</gpg.keyname>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
