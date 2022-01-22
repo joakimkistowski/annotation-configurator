@@ -27,4 +27,7 @@ jobs:
     - name: Maven Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn -B -Dgpg.passphrase=${{ secrets.SIGNING_PASSPHRASE }} -Dgpg.keyname=${{ secrets.SIGNING_KEY_NAME }} -P sign clean release:prepare release:perform -X
+      run: |
+        export SIGNING_PASSPHRASE=${{ secrets.SIGNING_PASSPHRASE }}
+        export SIGNING_KEY_NAME=${{ secrets.SIGNING_KEY_NAME }}
+      mvn -B -P sign clean release:prepare release:perform -X

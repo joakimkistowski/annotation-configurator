@@ -156,6 +156,10 @@
 	<profiles>
 		<profile>
 			<id>sign</id>
+			<properties>
+				<gpg.passphrase>${env.SIGNING_PASSPHRASE}</gpg.passphrase>
+				<gpg.keyname>${env.SIGNING_KEY_NAME}</gpg.keyname>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
