@@ -31,7 +31,7 @@ jobs:
     - name: Document Release Version
       run: |
         export RELEASE_VERSION=$( mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed "s/-SNAPSHOT$//" )
-        sed -i "s|<version>\S+</version>|<version>${RELEASE_VERSION}</version>|g" README.md
+        sed "s|<version>[0-9\.]*</version>|<version>${RELEASE_VERSION}</version>|g" -i README.md
         git add README.md
         git commit -m "[skip ci] Documenting upcoming release version"
     - name: Release
