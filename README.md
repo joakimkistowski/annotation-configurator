@@ -98,3 +98,4 @@ new AnnotationPropertyConfigContext(List.of(
         this.getClass(), (field, value) -> field.set(this, value)
     );
 ```
+
