@@ -1,4 +1,4 @@
-package com.github.joakimkistowski.annotationconfigurator;
+package io.github.joakimkistowski.annotationconfigurator;
 
 import lombok.Getter;
 import org.assertj.core.data.Offset;

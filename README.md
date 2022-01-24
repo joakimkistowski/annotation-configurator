@@ -2,6 +2,10 @@
 
 Simple tiny library for configuration injection using annotations.
 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.joakimkistowski/annotation-configurator.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.joakimkistowski%22%20AND%20a:%22annotation-configurator%22)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/joakimkistowski/annotation-configurator/Release/main)
+![GitHub](https://img.shields.io/github/license/joakimkistowski/annotation-configurator)
+
 ## How to use
 
 Get the library from maven central.

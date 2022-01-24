@@ -1,4 +1,4 @@
-package com.github.joakimkistowski.annotationconfigurator;
+package io.github.joakimkistowski.annotationconfigurator;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -1,4 +1,4 @@
-package com.github.joakimkistowski.annotationconfigurator;
+package io.github.joakimkistowski.annotationconfigurator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
