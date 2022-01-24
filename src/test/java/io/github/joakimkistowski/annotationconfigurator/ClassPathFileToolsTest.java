@@ -1,4 +1,4 @@
-package com.github.joakimkistowski.annotationconfigurator;
+package io.github.joakimkistowski.annotationconfigurator;
 
 import org.junit.jupiter.api.Test;
 

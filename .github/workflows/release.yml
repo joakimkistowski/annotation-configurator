@@ -25,13 +25,21 @@ jobs:
     - id: install-secret-key
       name: Install gpg secret key
       run: cat <(echo -e "${{ secrets.SIGNING_KEY }}") | gpg --batch --import
-    - name: Maven Release
+    - name: Test
+      run: mvn -B clean verify
+    - name: Document Release Version
+      run: |
+        export RELEASE_VERSION=$( mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed "s/-SNAPSHOT$//" )
+        sed "s|<version>[0-9\.]*</version>|<version>${RELEASE_VERSION}</version>|g" -i README.md
+        git add README.md
+        git commit -m "[skip ci] Documenting upcoming release version"
+    - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SIGNING_PASSPHRASE: ${{ secrets.SIGNING_PASSPHRASE }}
         SIGNING_KEY_NAME: ${{ secrets.SIGNING_KEY_NAME }}
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-      run: mvn -B -P sign clean release:prepare release:perform
+      run: mvn -B -P sign release:prepare release:perform
 
 
