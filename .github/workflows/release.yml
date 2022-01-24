@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - namespace
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -41,7 +40,6 @@ jobs:
         SIGNING_KEY_NAME: ${{ secrets.SIGNING_KEY_NAME }}
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-      run: mvn -B -P sign release:prepare
-      # run: mvn -B -P sign release:prepare release:perform
+      run: mvn -B -P sign release:prepare release:perform
 
 
