@@ -12,7 +12,7 @@ Get the library from maven central.
 <dependency>
     <groupId>io.github.joakimkistowski</groupId>
     <artifactId>annotation-configurator</artifactId>
-    <version>0.2.31</version>
+    <version>0.2.32</version>
 </dependency>
 ```
 
