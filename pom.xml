@@ -5,7 +5,7 @@
     <groupId>io.github.joakimkistowski</groupId>
     <artifactId>annotation-configurator</artifactId>
     <packaging>jar</packaging>
-    <version>0.2.33-SNAPSHOT</version>
+    <version>0.2.33</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Simple tiny library for configuration injection using annotations.</description>
@@ -31,7 +31,7 @@
         <connection>scm:git:https://github.com/joakimkistowski/annotation-configurator.git</connection>
         <developerConnection>scm:git:https://github.com/joakimkistowski/annotation-configurator.git</developerConnection>
         <url>https://github.com/joakimkistowski/annotation-configurator/tree/main</url>
-        <tag>HEAD</tag>
+        <tag>annotation-configurator-0.2.33</tag>
     </scm>
 
     <properties>
